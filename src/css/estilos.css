@@ -1,0 +1,31 @@
+header {
+    background-color: rgb(165, 153, 42);
+    height: 100%;
+    display: flex !important;
+    justify-content: space-evenly !important;
+}
+
+.navlink {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.cuerpo {
+    background-image: url('../img/cerveza.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+footer {
+    font-weight: bold;
+    background-color: rgb(165, 153, 42);
+    height: 100%;  
+}

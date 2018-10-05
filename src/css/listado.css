@@ -1,0 +1,25 @@
+.listadoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tablaListado {
+    display: grid;
+    grid-template-columns: repeat(9, 200px);
+    grid-auto-rows: minmax(30px, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    
+}
+
+.titulosTabla {
+    background-color: rgba(255, 255, 0, 0.486);
+    text-align: center;
+}
+
+.elementoLista {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
