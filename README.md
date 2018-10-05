@@ -12,7 +12,6 @@ npm run start
 or
 yarn start
 ```
-
 ## Testing
 ```bash
 npm run test
