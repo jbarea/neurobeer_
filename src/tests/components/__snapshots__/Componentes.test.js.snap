@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components > Form.jsx Deberia renderizar el formulario con ReactShallowRenderer 1`] = `
+exports[`components > Form.jsx Comprobamos que se renderiza bien nuestro componente Form 1`] = `
 <form
   className="formBeer"
   encType="multipart/form-data"
@@ -121,17 +121,17 @@ exports[`components > Form.jsx Deberia renderizar el formulario con ReactShallow
         <option
           value="1"
         >
-          De trigo
+          Ale
         </option>
         <option
           value="2"
         >
-          Porter y stout
+          De trigo
         </option>
         <option
           value="3"
         >
-          Ale
+          IPA
         </option>
         <option
           value="4"
@@ -146,12 +146,17 @@ exports[`components > Form.jsx Deberia renderizar el formulario con ReactShallow
         <option
           value="6"
         >
-          IPA
+          Pilsen
         </option>
         <option
           value="7"
         >
-          Pilsen
+          Porter
+        </option>
+        <option
+          value="8"
+        >
+          Stout
         </option>
       </select>
       <br />
@@ -170,7 +175,6 @@ exports[`components > Form.jsx Deberia renderizar el formulario con ReactShallow
         cols="80"
         name="ingr"
         onChange={[Function]}
-        required={true}
         rows="4"
         value=""
       />
@@ -227,13 +231,13 @@ exports[`components > Form.jsx Deberia renderizar el formulario con ReactShallow
 </form>
 `;
 
-exports[`components > Home.page.jsx Debería renderizar el formulario con ReactShallowRenderer 1`] = `
+exports[`components > Home.page.jsx Comprobamos que se renderiza bien nuestro componente Home 1`] = `
 <div
   className="cuerpo"
 />
 `;
 
-exports[`components > Listado.jsx Debería renderizar el formulario con ReactShallowRenderer 1`] = `
+exports[`components > Listado.jsx Comprobamos que se renderiza bien nuestro componente Listado 1`] = `
 <div
   className="listadoContainer"
 >
@@ -254,17 +258,236 @@ exports[`components > Listado.jsx Debería renderizar el formulario con ReactSha
       <div
         className="elementoLista"
       >
-        Nombre
+        <Link
+          replace={false}
+          to="/listado/porNombre/"
+        >
+          Nombre
+        </Link>
       </div>
       <div
         className="elementoLista"
       >
-        Graduación
+        <Link
+          replace={false}
+          to="/listado/porGraduacion/"
+        >
+          Grad
+        </Link>
       </div>
       <div
         className="elementoLista"
       >
-        Tipo
+        <Link
+          replace={false}
+          to="/listado/porTipo/"
+        >
+          Tipo
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Ingredientes
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Sin Gluten
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Precio
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components > PorGraduacion Comprobamos que se renderiza correctamente nuestro componente PorGraduacion 1`] = `
+<div
+  className="listadoContainer"
+>
+  <div>
+    <div
+      className="tablaListado titulosTabla"
+    >
+      <div
+        className="elementoLista"
+      >
+        ID
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Imagen
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porNombre"
+        >
+          Nombre
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porGraduacion"
+        >
+          Grad
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porTipo/"
+        >
+          Tipo
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Ingredientes
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Sin Gluten
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Precio
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components > PorNombre.jsx Comprobamos que se renderiza correctamente nuestro componente PorNombre 1`] = `
+<div
+  className="listadoContainer"
+>
+  <div>
+    <div
+      className="tablaListado titulosTabla"
+    >
+      <div
+        className="elementoLista"
+      >
+        ID
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Imagen
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porNombre/"
+        >
+          Nombre
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porGraduacion/"
+        >
+          Grad
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porTipo/"
+        >
+          Tipo
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Ingredientes
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Sin Gluten
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Precio
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components > PorTipo Comprobamos que se renderiza correctamente nuestro componente PorTipo 1`] = `
+<div
+  className="listadoContainer"
+>
+  <div>
+    <div
+      className="tablaListado titulosTabla"
+    >
+      <div
+        className="elementoLista"
+      >
+        ID
+      </div>
+      <div
+        className="elementoLista"
+      >
+        Imagen
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porNombre/"
+        >
+          Nombre
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porGraduacion/"
+        >
+          Grad
+        </Link>
+      </div>
+      <div
+        className="elementoLista"
+      >
+        <Link
+          replace={false}
+          to="/listado/porTipo/"
+        >
+          Tipo
+        </Link>
       </div>
       <div
         className="elementoLista"

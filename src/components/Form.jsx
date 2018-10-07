@@ -210,7 +210,7 @@ class Form extends Component {
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
                         <label htmlFor="ingr">Ingredientes:</label><br/>
                         <textarea name="ingr" rows="4" cols="80" value={this.state.ingr} 
-                        onChange={(event) => this.handleUserInput(event)} required></textarea><br/>
+                        onChange={(event) => this.handleUserInput(event)}></textarea><br/>
                     </div>
                     <div className="form-group" id="check">
                         <label><input type="checkbox" name="chk" id="chk" value="Sin Gluten" 

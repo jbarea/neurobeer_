@@ -1,21 +1,3 @@
-/* function ordenarPorTipo(p_array_json, p_key) {
-    p_array_json.sort(function (a, b) {
-        return a[p_key] > b[p_key];
-    });
-}
-
-function ordenarPorPrecio(p_array_json, p_key) {
-    p_array_json.sort(function (a, b) {
-        return a[p_key] > b[p_key];
-    })
-}
-
-function ordenarPorNombre(p_array_json, p_key) {
-    p_array_json.sort(function (a, b) {
-        return a[p_key] > b[p_key];
-    })
-} */
-
 export var ordenarPor = function (field, reverse, primer) {
     var key = function (x) { return primer ? primer(x[field]) : x[field] };
 
@@ -25,6 +7,3 @@ export var ordenarPor = function (field, reverse, primer) {
     }
 }
 
-/* module.exports = ordenarPorTipo;
-module.exports = ordenarPorPrecio;
-module.exports = ordenarPorNombre; */

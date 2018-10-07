@@ -3,7 +3,7 @@ import uuid from 'uuid';
 import { Link } from 'react-router-dom';
 import '../css/estilos.css';
 import '../css/listado.css';
-import { ordenarPor} from '../utils/actions';
+import { ordenarPor } from '../utils/actions';
 import { seleccionTipo } from '../data/selectOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faEraser } from '@fortawesome/free-solid-svg-icons';
