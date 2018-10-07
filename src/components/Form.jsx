@@ -79,20 +79,15 @@ class Form extends Component {
         e.preventDefault();
         const name = e.target.name;
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        //const value = e.target.value;
         this.setState({[name]: value},
             () => { this.validateField(name, value) })
     }
 
     validateField(fieldName, value){
         let fieldValidationErrors = this.state.formErrors;
-        let imagenValid = this.state.imagenValid;
-        let gradValid = this.state.gradValid;
-        let nombreValid = this.state.nombreValid;
-        let tipoValid = this.state.tipoValid;
-        let ingrValid = this.state.ingrValid;
-        let chkValid = this.state.chkValid;
-        let precioValid = this.state.precioValid;
+        let {
+            imagenValid, gradValid, nombreValid, tipoValid, ingrValid, chkValid, precioValid
+        } = this.state;
 
         switch(fieldName){
             case 'imagen':
@@ -111,17 +106,16 @@ class Form extends Component {
                 fieldValidationErrors.nombre = nombreValid ? '' : 'El campo solo puede contener caracteres alfanuméricos';
                 break;
             case 'tipo':
-                //seleValid = value.match(/[0-9]/i);
                 tipoValid = document.getElementById("tipo").selectedIndex;
                 let tipo2 = document.getElementById("tipo");
                 this.tipo = tipo2.options[tipo2.selectedIndex].text;
-                console.log(this.tipo);
+                //console.log(this.tipo);
                 if((tipoValid === null) || (tipoValid === 0)){
                     tipoValid = false; 
                 }else{
                     tipoValid = true;
                 }
-                console.log(tipoValid);
+                //console.log(tipoValid);
                 fieldValidationErrors.tipo = tipoValid ? '' : 'Debe de seleccionar un tipo';
                 break;
             case 'ingr':
@@ -130,7 +124,7 @@ class Form extends Component {
                 break;
             case 'chk':
                 chkValid = value;
-                console.log(chkValid);
+                //console.log(chkValid);
                 if(!chkValid.checked){
                     chkValid = false;
                 }else{

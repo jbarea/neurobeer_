@@ -1,5 +1,5 @@
 import { ordenarPor } from '../../utils/actions';
-//import '../testData/localStorage';
+
 var localStorage_mock = [];
 describe('ordenarPor', () => {
     test('Comprobamos que la funcion de ordenacion funciona correctamente', () => {

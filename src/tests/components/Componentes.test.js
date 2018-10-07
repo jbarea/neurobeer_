@@ -1,6 +1,4 @@
 import React from 'react';
-//import { shallow } from 'enzyme';
-import ReactTestUtils from 'react-dom/test-utils';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
 import Home from '../../components/Home.page';
 import Form from '../../components/Form';
@@ -36,9 +34,7 @@ describe('components > Home.page.jsx', () => {
 
 describe('components > FormErrors.jsx', ()=> {
     test('Comprobamos que se renderiza bien nuestro componente FormErrors', () => {
-        
         var formErrors =  { imagen: '', grad: '', nombre: '', tipo: '', ingr: '', precio: '' };
-        
         const renderer = new ReactShallowRenderer();
         renderer.render(<FormErrors formErrors={''}/>);
         const result = renderer.getRenderOutput();

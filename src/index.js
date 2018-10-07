@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import './css/estilos.css';
+import icono from './img/icono_cerveza.png';
 import Home from './components/Home.page';
 import Form from './components/Form';
 import Listado from './components/Listado';
@@ -11,17 +12,17 @@ import PorGraduacion from './components/PorGraduacion';
 import Edicion from './components/Edicion';
 import Borrado from './components/Borrado';
 import 'bootstrap/dist/css/bootstrap.css';
-
-//import App from './App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 import registerServiceWorker from './registerServiceWorker';
 
 const Header = () => (
     <div className="cabecera">
     <header>
+        <img src={icono} alt="icono de cerveza" height="30px" width="30px"></img>
         <h3>Neurobeer</h3>
         <NavLink className="navlink" activeClassName='is-active' to='/' exact>Inicio</NavLink>
         <NavLink className="navlink" activeClassName='is-active' to='/insertar'>Insertar</NavLink>
-        {/* <NavLink className="navlink" activeClassName='is-active' to='/edicion'>Edicion</NavLink> */}
         <NavLink className="navlink" activeClassName='is-active' to='/listado'>Listado</NavLink>
     </header>
     </div>
@@ -29,7 +30,9 @@ const Header = () => (
 
 const Footer = () => (
     <footer>
-        <p>Murcia 2018</p>
+        <img src={icono} alt="icono de cerveza" height="30px" width="30px"></img>
+        <p className="pie">Neurobeer<FontAwesomeIcon icon={faCopyright}></FontAwesomeIcon> Murcia 2018</p>
+        <img src={icono} alt="icono de cerveza" height="30px" width="30px"></img>
     </footer>
 )
 

@@ -9,9 +9,9 @@ class Edicion extends Component {
         var data = JSON.parse(localStorage.getItem("datos")).find(function (iteracion) {
             return iteracion.id === id_;
         });
-        console.log(data);
+        //console.log(data);
         //console.log(id_);
-        console.log('props from link', this.props.match.params.id)
+        //console.log('props from link', this.props.match.params.id)
         this.state = {
             datosEdicion: JSON.parse(localStorage.getItem("datos")) || [],
             id: data.id,
@@ -89,15 +89,10 @@ class Edicion extends Component {
     }
 
     validateField(fieldName, value) {
-        //let valTMP = '';
         let fieldValidationErrors = this.state.formErrors;
-        let imagenValid = this.state.imagenValid;
-        let gradValid = this.state.gradValid;
-        let nombreValid = this.state.nombreValid;
-        let tipoValid = this.state.tipoValid;
-        let ingrValid = this.state.ingrValid;
-        let chkValid = this.state.chkValid;
-        let precioValid = this.state.precioValid;
+        let {
+            imagenValid, gradValid, nombreValid, tipoValid, ingrValid, chkValid, precioValid
+        } = this.state;
 
         switch (fieldName) {
             case 'imagen':

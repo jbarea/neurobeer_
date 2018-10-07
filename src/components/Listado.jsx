@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/estilos.css';
 import '../css/listado.css';
-//import { ordenarPorTipo, ordenarPorPrecio, ordenarPorNombre } from '../utils/actions';
 import { seleccionTipo } from '../data/selectOptions';
 import uuid from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
