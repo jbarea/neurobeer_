@@ -1,5 +1,6 @@
 import React from 'react';
 //import { shallow } from 'enzyme';
+import ReactTestUtils from 'react-dom/test-utils';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
 import Home from '../../components/Home.page';
 import Form from '../../components/Form';
@@ -15,7 +16,11 @@ describe('components > Form.jsx', () => {
         const renderer = new ReactShallowRenderer();
         renderer.render(<Form />);
         expect(renderer.getRenderOutput()).toMatchSnapshot();
-    });
+    }),
+
+    test('Comprobamos que se renderiza el formulario y todos los campos', () => {
+
+    })
 });
 
 describe('components > Home.page.jsx', () => {
@@ -30,7 +35,8 @@ describe('components > FormErrors.jsx', ()=> {
     test('Debería renderizar el formulario con ReactShallowRenderer', () => {
         const renderer = new ReactShallowRenderer();
         renderer.render(<FormErrors />);
-        expect(renderer.getRenderOutput()).toMatchSnapshot();
+        const result = renderer.getRenderOutput();
+        expect(result.type).toBe('div');
     })
 })
 

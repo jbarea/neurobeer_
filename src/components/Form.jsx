@@ -131,11 +131,11 @@ class Form extends Component {
             case 'chk':
                 chkValid = value;
                 console.log(chkValid);
-                /* if(!chkValid.checked){
+                if(!chkValid.checked){
                     chkValid = false;
                 }else{
                     chkValid = true;
-                } */
+                }
                 break;
             case 'precio':
                 precioValid = value.match(/[0-9]/i);
@@ -197,13 +197,14 @@ class Form extends Component {
                         <label htmlFor="sele">Selección</label>
                         <select id="tipo" name="tipo" onChange={(event) => this.handleUserInput(event)} required>
                             <option value="0">Seleccione Un tipo</option>
-                            <option value="1">De trigo</option>
-                            <option value="2">Porter y stout</option>
-                            <option value="3">Ale</option>
+                            <option value="1">Ale</option>
+                            <option value="2">De trigo</option>
+                            <option value="3">IPA</option>
                             <option value="4">Lager</option>
                             <option value="5">Lambic</option>
-                            <option value="6">IPA</option>
-                            <option value="7">Pilsen</option>
+                            <option value="6">Pilsen</option>
+                            <option value="7">Porter</option>
+                            <option value="8">Stout</option>
                         </select><br/>
                     </div>
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
@@ -212,8 +213,8 @@ class Form extends Component {
                         onChange={(event) => this.handleUserInput(event)} required></textarea><br/>
                     </div>
                     <div className="form-group" id="check">
-                        <label><input type="checkbox" name="chk" id="chk" value={this.state.chk} 
-                        onChange={(event) => this.handleUserInput(event)} required></input>Sin gluten</label><br />
+                        <label><input type="checkbox" name="chk" id="chk" value="Sin Gluten" 
+                        onChange={(event) => this.handleUserInput(event)}></input>Sin gluten</label><br />
                     </div>
                     <div className={`form-group ${this.errorClass(this.state.formErrors.precio)}`} id="pre">
                         <label htmlFor="precio">Precio:</label><br/>

@@ -5,6 +5,9 @@ import './css/estilos.css';
 import Home from './components/Home.page';
 import Form from './components/Form';
 import Listado from './components/Listado';
+import PorNombre from './components/PorNombre';
+import PorTipo from './components/PorTipo';
+import PorGraduacion from './components/PorGraduacion';
 import Edicion from './components/Edicion';
 import Borrado from './components/Borrado';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -40,6 +43,9 @@ const AppRouter = () => (
                 <Route path='/listado' component={Listado} exact/>
                 <Route path='/edicion/:id' component={Edicion} exact/>
                 <Route path='/borrado/:id' component={Borrado} exact/>
+                <Route path='/listado/porNombre/' component={PorNombre} exact/>
+                <Route path='/listado/porTipo/' component={PorTipo} exact/>
+                <Route path='/listado/porGraduacion/' component={PorGraduacion} exact/>
             </Switch>
             <Footer/>
         </div>

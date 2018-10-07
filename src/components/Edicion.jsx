@@ -229,7 +229,7 @@ class Edicion extends Component {
 
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid} align="center">
+                        <button type="submit" className="btn btn-primary" align="center">
                             Aceptar
                         </button>
                     </div>
