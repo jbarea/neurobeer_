@@ -186,7 +186,7 @@ class Edicion extends Component {
                     <div className="form-group" id="img">
                         <label htmlFor="imagen">Imagen:</label>
                         <input type="file" className="form-control-file" id="img_in" name="imagen" value={this.state.imagen}
-                            onChange={(event) => this.handleUserInput(event)}></input>
+                            onChange={(event) => this.handleUserInput(event)} required></input>
                         <img id="imgSelected" src="#" name="imgSelected" alt="imagen seleccionada mediante cuadro de diálogo"></img>
                         <br />
                     </div>
@@ -194,12 +194,12 @@ class Edicion extends Component {
                         <div className={`form-group col-md-4 ${this.errorClass(this.state.formErrors.nombre)}`} id="nom">
                             <label htmlFor="nombre">Nombre:</label>
                             <input type="text" className="form-control" name="nombre" value={this.state.nombre}
-                                onChange={(event) => this.handleUserInput(event)}></input><br />
+                                onChange={(event) => this.handleUserInput(event)} required></input><br />
                         </div>
                         <div className={`form-group col-md-2 ${this.errorClass(this.state.formErrors.grad)}`} id="grad">
                             <label htmlFor="grad">Graduación:</label>
                             <input type="text" className="form-control" size="3" name="grad" value={this.state.grad}
-                                onChange={(event) => this.handleUserInput(event)}></input><br />
+                                onChange={(event) => this.handleUserInput(event)} required></input><br />
                         </div>
                     </div>
                     <div className="form-group" id="sel">
@@ -225,7 +225,7 @@ class Edicion extends Component {
                     <div className={`form-group ${this.errorClass(this.state.formErrors.precio)}`} id="pre">
                         <label htmlFor="precio">Precio:</label><br />
                         <input type="text" name="precio" value={this.state.precio}
-                            onChange={(event) => this.handleUserInput(event)}></input><br />
+                            onChange={(event) => this.handleUserInput(event)} required></input><br />
 
                     </div>
                     <div className="form-group">

@@ -35,8 +35,8 @@ class PorPrecio extends Component {
                         this.state.datosListado.map((item) =>
                             <div className="tablaListado" key={uuid()}>
                                 <div className="elementoLista" key={item.id}>
-                                    <FontAwesomeIcon icon={faPencilAlt} /><Link to={`/edicion/${item.id}`} state={item.id}>Editar</Link>
-                                    <FontAwesomeIcon icon={faEraser} /><Link to={`/borrado/${item.id}`} state={item.id}>Borrar</Link>
+                                    <FontAwesomeIcon icon={faPencilAlt} /><Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}>Editar</Link>
+                                    <FontAwesomeIcon icon={faEraser} /><Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}>Borrar</Link>
                                     {item.id}</div>
                                 <div className="elementoLista" >{item.imagen}</div>
                                 <div className="elementoLista" >{item.nombre}</div>
