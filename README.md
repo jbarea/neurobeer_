@@ -2,7 +2,7 @@
 
 ## Instalación/Install
 ```bash
-git clone https://bitbucket.com/jbarea/neurobeer_
+git clone https://github.com/jbarea/neurobeer_
 cd neurobeer_
 npm install
 ```
