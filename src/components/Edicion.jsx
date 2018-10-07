@@ -9,11 +9,14 @@ class Edicion extends Component {
         var data = JSON.parse(localStorage.getItem("datos")).find(function (iteracion) {
             return iteracion.id === id_;
         });
-        //console.log(data);
-        //console.log(id_);
-        //console.log('props from link', this.props.match.params.id)
+        var ele = JSON.parse(localStorage.getItem("datos")).findIndex(function (iteracion) {
+            return iteracion.id === id_;
+        });
+        console.log(data);
+        console.log(id_);
+        console.log('props from link', this.props.match.params.id)
         this.state = {
-            datosEdicion: JSON.parse(localStorage.getItem("datos")) || [],
+            elem: ele,
             id: data.id,
             imagen: '',
             grad: data.graduacion,
@@ -31,7 +34,7 @@ class Edicion extends Component {
             chkValid: false,
             precioValid: false,
             formValid: true,
-            beerStore: []
+            beerStore: JSON.parse(localStorage.getItem("datos")) || []
         }
     }
 
@@ -47,7 +50,10 @@ class Edicion extends Component {
             check: this.state.chk,
             precio: this.state.precio
         }
-        this.state.beerStore.push(data_);
+        //this.state.beerStore.push(data_);
+        var ele = this.state.elem;
+        console.log(ele);
+        this.state.beerStore[ele] = data_;
         localStorage.setItem('datos', JSON.stringify(this.state.beerStore));
         this.setState(prevState => {
             return prevState = {
@@ -181,7 +187,7 @@ class Edicion extends Component {
                     <div className="form-group" id="img">
                         <label htmlFor="imagen">Imagen:</label>
                         <input type="file" className="form-control-file" id="img_in" name="imagen" value={this.state.imagen}
-                            onChange={(event) => this.handleUserInput(event)} required></input>
+                            onChange={(event) => this.handleUserInput(event)}></input>
                         <img id="imgSelected" src="#" name="imgSelected" alt="imagen seleccionada mediante cuadro de diálogo"></img>
                         <br />
                     </div>

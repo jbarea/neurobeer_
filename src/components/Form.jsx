@@ -196,7 +196,7 @@ class Form extends Component {
                             <option value="3">IPA</option>
                             <option value="4">Lager</option>
                             <option value="5">Lambic</option>
-                            <option value="6">Pilsen</option>
+                            <option value="6" >Pilsen</option>
                             <option value="7">Porter</option>
                             <option value="8">Stout</option>
                         </select><br/>
