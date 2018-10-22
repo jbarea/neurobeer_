@@ -167,7 +167,7 @@ class Edicion extends Component {
     validateForm() {
         this.setState({
             formValid: this.state.imagenValid && this.state.gradValid && this.state.nombreValid && this.state.tipoValid &&
-                this.state.ingrValid && this.state.precioValid
+                this.state.precioValid
         });
     }
 

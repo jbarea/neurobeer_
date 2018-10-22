@@ -7,3 +7,9 @@ export var ordenarPor = function (field, reverse, primer) {
     }
 }
 
+export var comprobarStore = function (state) {
+    var temp = JSON.parse(localStorage.getItem("datos"));
+    if (temp !== []){
+
+    }
+}

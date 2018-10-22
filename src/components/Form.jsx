@@ -27,7 +27,7 @@ class Form extends Component {
             chkValid: false,
             precioValid: false,
             formValid: false,
-            beerStore: []
+            beerStore: JSON.parse(localStorage.getItem("datos")) || []
         }
     }
 
@@ -152,7 +152,7 @@ class Form extends Component {
 
     validateForm() {
         this.setState({formValid: this.state.imagenValid && this.state.gradValid && this.state.nombreValid && this.state.tipoValid && 
-            this.state.ingrValid && this.state.precioValid
+            this.state.precioValid
         });
     }
 
