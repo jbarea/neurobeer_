@@ -25,21 +25,21 @@ class PorTipo extends Component {
             <div className="listadoContainer">
                 <div>
                     <div className="tablaListado titulosTabla" key={uuid()}>
-                        <div className="elementoLista">ID</div>
+                        <div className="elementoLista"><Link to={`/listado/porID/`}>ID</Link></div>
                         <div className="elementoLista">Imagen</div>
                         <div className="elementoLista"><Link to={`/listado/porNombre/`}>Nombre</Link></div>
                         <div className="elementoLista"><Link to={`/listado/porGraduacion/`}>Grad</Link></div>
                         <div className="elementoLista"><Link to={`/listado/porTipo/`}>Tipo</Link></div>
                         <div className="elementoLista">Ingredientes</div>
                         <div className="elementoLista">Sin Gluten</div>
-                        <div className="elementoLista">Precio</div>
+                        <div className="elementoLista"><Link to={`/listado/porPrecio/`}>Precio</Link></div>
                     </div>
                     {
                         this.state.datosListado.map((item) =>
                             <div className="tablaListado" key={uuid()}>
                                 <div className="elementoLista" key={item.id}>
-                                    <FontAwesomeIcon icon={faPencilAlt} /><Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}>Editar</Link>
-                                    <FontAwesomeIcon icon={faEraser} /><Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}>Borrar</Link>
+                                    <Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}><FontAwesomeIcon icon={faPencilAlt} /></Link>
+                                    <Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}><FontAwesomeIcon icon={faEraser} /></Link>
                                     {item.id}</div>
                                 <div className="elementoLista" >{item.imagen}</div>
                                 <div className="elementoLista" >{item.nombre}</div>

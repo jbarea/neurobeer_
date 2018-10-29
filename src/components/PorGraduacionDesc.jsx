@@ -9,16 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faEraser, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 class PorGraduacion extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             datosListado: JSON.parse(localStorage.getItem("datos")) || []
         }
-        this.state.datosListado.sort(ordenarPor("graduacion",true, parseFloat));
+        this.state.datosListado.sort(ordenarPor("graduacion", false, parseFloat));
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="listadoContainer">
                 <div>
                     <div className="tablaListado titulosTabla" key={uuid()}>

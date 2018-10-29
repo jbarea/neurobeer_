@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 import { Link } from 'react-router-dom';
-import '../css/listado.css';
 import '../css/estilos.css';
+import '../css/listado.css';
 import { ordenarPor } from '../utils/actions';
 import { seleccionTipo } from '../data/selectOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faEraser, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-class PorGraduacion extends Component {
+class PorID extends Component {
     constructor(props){
         super(props);
         this.state = {
             datosListado: JSON.parse(localStorage.getItem("datos")) || []
         }
-        this.state.datosListado.sort(ordenarPor("graduacion",true, parseFloat));
+        this.state.datosListado.sort(ordenarPor("id", true));
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="listadoContainer">
                 <div>
                     <div className="tablaListado titulosTabla" key={uuid()}>
-                        <div className="elementoLista"><Link to={`/listado/porID/`}>ID</Link></div>
+                        <div className="elementoLista">ID
+                            <Link to={`/listado/porID/`}>
+                                <FontAwesomeIcon icon={faArrowUp} />
+                            </Link>
+                            <Link to={`/listado/porIDDesc/`}>
+                                <FontAwesomeIcon icon={faArrowDown} />
+                            </Link>
+                        </div>
                         <div className="elementoLista">Imagen</div>
-                        <div className="elementoLista"><Link to={`/listado/porNombre`}>Nombre</Link></div>
+                        <div className="elementoLista"><Link to={`/listado/porNombre/`}>Nombre</Link></div>
                         <div className="elementoLista">Grad
                             <Link to={`/listado/porGraduacion/`}>
                                 <FontAwesomeIcon icon={faArrowUp} />
@@ -36,7 +43,7 @@ class PorGraduacion extends Component {
                         <div className="elementoLista"><Link to={`/listado/porTipo/`}>Tipo</Link></div>
                         <div className="elementoLista">Ingredientes</div>
                         <div className="elementoLista">Sin Gluten</div>
-                        <div className="elementoLista"><Link to={`/listado/porPrecio`}>Precio</Link></div>
+                        <div className="elementoLista"><Link to={`/listado/porPrecio/`}>Precio</Link></div>
                     </div>
                     {
                         this.state.datosListado.map((item) =>
@@ -61,4 +68,4 @@ class PorGraduacion extends Component {
     }
 }
 
-export default PorGraduacion;
+export default PorID;

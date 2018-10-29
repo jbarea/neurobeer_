@@ -6,10 +6,3 @@ export var ordenarPor = function (field, reverse, primer) {
         return ((A < B) ? -1 : ((A > B) ? 1 : 0)) * [-1, 1][+!!reverse];
     }
 }
-
-export var comprobarStore = function (state) {
-    var temp = JSON.parse(localStorage.getItem("datos"));
-    if (temp !== []){
-
-    }
-}

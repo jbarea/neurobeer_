@@ -9,6 +9,9 @@ import Listado from './components/Listado';
 import PorNombre from './components/PorNombre';
 import PorTipo from './components/PorTipo';
 import PorGraduacion from './components/PorGraduacion';
+import PorGraduacionDesc from './components/PorGraduacionDesc';
+import PorID from './components/PorID';
+import PorPrecio from './components/PorPrecio';
 import Edicion from './components/Edicion';
 import Borrado from './components/Borrado';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -49,6 +52,9 @@ const AppRouter = () => (
                 <Route path='/listado/porNombre/' component={PorNombre} exact/>
                 <Route path='/listado/porTipo/' component={PorTipo} exact/>
                 <Route path='/listado/porGraduacion/' component={PorGraduacion} exact/>
+                <Route path='/listado/porGraduacionDesc/' component={PorGraduacionDesc} exact/>
+                <Route path='/listado/porID/' component={PorID} exact/>
+                <Route path='/listado/porPrecio/' component={PorPrecio} exact/>
             </Switch>
             <Footer/>
         </div>
