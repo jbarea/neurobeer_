@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/estilos.css';
 import '../css/listado.css';
+import { ordenarPor } from '../utils/actions';
 import { seleccionTipo } from '../data/selectOptions';
 import uuid from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +17,45 @@ class Listado extends Component {
             datosListado: JSON.parse(localStorage.getItem("datos")) || []
         }
     }
+ 
+    handleOrder = (opcion) => {
+        switch(opcion){
+            case 'graduacion':
+                this.setState(this.state.datosListado.sort(ordenarPor("graduacion",true,parseFloat)));
+                //console.log(this.state.datosListado);
+                break;
+            case 'graduacionD':
+                this.setState(this.state.datosListado.sort(ordenarPor("graduacion",false,parseFloat)));
+                break;
+            case 'tipo':
+                this.setState(this.state.datosListado.sort(ordenarPor("tipo",true)));
+                break;
+            case 'tipoD':
+                this.setState(this.state.datosListado.sort(ordenarPor("tipo",false)));
+                break;
+            case 'nombre':
+                this.setState(this.state.datosListado.sort(ordenarPor("nombre",true)));
+                break;
+            case 'nombreD':
+                this.setState(this.state.datosListado.sort(ordenarPor("nombre",false)));
+                break;
+            case 'id':
+                this.setState(this.state.datosListado.sort(ordenarPor("id",true)));
+                break;
+            case 'idD':
+                this.setState(this.state.datosListado.sort(ordenarPor("id",false)));
+                break;
+            case 'precio':
+                this.setState(this.state.datosListado.sort(ordenarPor("precio",true,parseFloat)));
+                break;
+            case 'precioD':
+                this.setState(this.state.datosListado.sort(ordenarPor("precio",false,parseFloat)));
+                //console.log(this.state.datosListado);
+                break;
+            default:
+                break;
+        }
+    }
 
     render() {
         return(
@@ -23,27 +63,28 @@ class Listado extends Component {
             <div>
                 <div className="tablaListado titulosTabla" key={uuid()}>
                     <div className="elementoLista">ID
-                        <Link to={`/listado/porID/`}>
-                        <FontAwesomeIcon icon={faArrowUp} />
-                        </Link>
-                        <Link to={`/listado/porIDDesc/`}>
-                        <FontAwesomeIcon icon={faArrowDown} />
-                        </Link>
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => this.handleOrder("id")}/>
+                        <FontAwesomeIcon icon={faArrowDown} onClick={() => this.handleOrder("idD")}/>
                     </div>
                     <div className="elementoLista">Imagen</div>
-                    <div className="elementoLista"><Link to={`/listado/porNombre/`}>Nombre</Link></div>
-                    <div className="elementoLista">Grad
-                        <Link to={`/listado/porGraduacion/`}>
-                        <FontAwesomeIcon icon={faArrowUp}/>
-                        </Link>
-                        <Link to={`/listado/porGraduacionDesc/`}>
-                        <FontAwesomeIcon icon={faArrowDown}/>
-                        </Link>
+                    <div className="elementoLista">Nombre
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => this.handleOrder("nombre")} />
+                        <FontAwesomeIcon icon={faArrowDown} onClick={() => this.handleOrder("nombreD")} />
                     </div>
-                    <div className="elementoLista"><Link to={`/listado/porTipo/`}>Tipo</Link></div>
+                        <div className="elementoLista" >Grad
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => this.handleOrder("graduacion")}/>
+                        <FontAwesomeIcon icon={faArrowDown} onClick={() => this.handleOrder("graduacionD")}/>
+                    </div>
+                    <div className="elementoLista">Tipo
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => this.handleOrder("tipo")} />
+                        <FontAwesomeIcon icon={faArrowDown} onClick={() => this.handleOrder("tipoD")} />
+                    </div>
                     <div className="elementoLista">Ingredientes</div>
                     <div className="elementoLista">Sin Gluten</div>
-                    <div className="elementoLista"><Link to={`/listado/porPrecio/`}>Precio</Link></div>
+                    <div className="elementoLista">Precio
+                        <FontAwesomeIcon icon={faArrowUp} onClick={() => this.handleOrder("precio")} />
+                        <FontAwesomeIcon icon={faArrowDown} onClick={() => this.handleOrder("precioD")} />
+                    </div>
                     {
                             /* this.porPrecio ? ordenarPorPrecio(this.state.datosListado, "precio") : this.porTipo ? ordenarPorTipo(this.state.datosListado, "tipo") :
                                 this.porNombre ? ordenarPorNombre(this.state.datosListado, "nombre") : this.state.datosListado */
