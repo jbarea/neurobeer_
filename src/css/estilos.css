@@ -17,11 +17,16 @@ body {
   font-family: sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .cuerpo {
-    background-image: url('../img/cerveza.jpg');
-    background-repeat: no-repeat;
+    flex: 1;
+    background-image: url(../img/cerveza.jpg);
     background-size: cover;
-    height: 600px;
 }
 
 footer {
@@ -30,6 +35,6 @@ footer {
     font-weight: bold;
     background-color: rgb(165, 153, 42);
     height: 100%;
-    margin-left: auto;
+    
 }
 
