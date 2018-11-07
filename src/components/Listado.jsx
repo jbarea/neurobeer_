@@ -7,6 +7,7 @@ import { seleccionTipo } from '../data/selectOptions';
 import uuid from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faEraser, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'; //faArrowUp y faArrowDown para flechas de ordenacion
+
 class Listado extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +18,7 @@ class Listado extends Component {
             datosListado: JSON.parse(localStorage.getItem("datos")) || []
         }
     }
- 
+
     handleOrder = (opcion) => {
         switch(opcion){
             case 'graduacion':
