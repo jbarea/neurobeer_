@@ -65,7 +65,7 @@ class Form extends Component {
     document.getElementById("imgSelected").style.display = "block";
 
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        let reader = new FileReader();
 
         reader.onload = function (e) {
             document.getElementById('imgSelected').src = e.target.result;

@@ -5,11 +5,11 @@ import '../css/edicion.css';
 class Edicion extends Component {
     constructor(props){
         super(props);
-        var id_ = this.props.match.params.id;
-        var data = JSON.parse(localStorage.getItem("datos")).find(function (iteracion) {
+        let id_ = this.props.match.params.id;
+        let data = JSON.parse(localStorage.getItem("datos")).find(function (iteracion) {
             return iteracion.id === id_;
         });
-        var ele = JSON.parse(localStorage.getItem("datos")).findIndex(function (iteracion) {
+        let ele = JSON.parse(localStorage.getItem("datos")).findIndex(function (iteracion) {
             return iteracion.id === id_;
         });
         console.log(data);
@@ -51,7 +51,7 @@ class Edicion extends Component {
             precio: this.state.precio
         }
         //this.state.beerStore.push(data_);
-        var ele = this.state.elem;
+        let ele = this.state.elem;
         console.log(ele);
         this.state.beerStore[ele] = data_;
         localStorage.setItem('datos', JSON.stringify(this.state.beerStore));
@@ -75,7 +75,7 @@ class Edicion extends Component {
         document.getElementById("imgSelected").style.display = "block";
 
         if (input.files && input.files[0]) {
-            var reader = new FileReader();
+            let reader = new FileReader();
 
             reader.onload = function (e) {
                 document.getElementById('imgSelected').src = e.target.result;
@@ -207,11 +207,14 @@ class Edicion extends Component {
                         <label htmlFor="sele">Selección</label>
                         <select id="tipo" name="tipo" onChange={(event) => this.handleUserInput(event)}>
                             <option value="0">Seleccione Un tipo</option>
-                            <option value="1">De trigo</option>
-                            <option value="2">Porter y stout</option>
-                            <option value="3">Ale</option>
+                            <option value="1">Ale</option>
+                            <option value="2">De trigo</option>
+                            <option value="3">IPA</option>
                             <option value="4">Lager</option>
                             <option value="5">Lambic</option>
+                            <option value="6" >Pilsen</option>
+                            <option value="7">Porter</option>
+                            <option value="8">Stout</option>
                         </select><br />
                     </div>
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
