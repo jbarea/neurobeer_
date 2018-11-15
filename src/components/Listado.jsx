@@ -123,8 +123,11 @@ class Listado extends Component {
                             <FontAwesomeIcon icon={faEraser} onClick={() => this.handleDelete(item.id)}/>
                             {/* <FontAwesomeIcon icon={faPencilAlt}/><Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}>Editar</Link> */}
                             {/* <FontAwesomeIcon icon={faEraser}/><Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}>Borrar</Link> */}
-                        {item.id}</div>
-                        <div className="elementoLista" >{item.imagen}</div>
+                        </div>
+                        <div className="elementoLista" >
+                            <img id="imgSelected" src={"/img/" + item.imagen.substring(12)} width="100px" height="100px" name="imgSelected" 
+                            alt="imagen seleccionada mediante cuadro de diálogo"></img>
+                        </div>
                         <div className="elementoLista" >{item.nombre}</div>
                         <div className="elementoLista" >{item.graduacion}</div>
                         <div className="elementoLista" >{seleccionTipo[item.tipo]}</div>
