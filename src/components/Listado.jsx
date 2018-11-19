@@ -19,6 +19,30 @@ class Listado extends Component {
         }
     }
 
+    handleDelete = (elemID) => {
+        let datosBorrado = JSON.parse(localStorage.getItem("datos"));
+        //var id = elemID;
+        let ele = JSON.parse(localStorage.getItem("datos")).findIndex(function (iteracion) {
+            return iteracion.id === elemID;
+        });
+
+        datosBorrado.splice(ele, 1);
+        //console.log(ele);
+        localStorage.removeItem("datos");
+        localStorage.setItem("datos", JSON.stringify(datosBorrado));
+        //this.setState(this.state.datosListado=JSON.parse(localStorage.getItem("datos")));
+        this.setState(prevState => {
+            return prevState = {
+                ...prevState,
+                porPrecio: false,
+                porTipo: false,
+                porNombre: false,
+                datosListado: JSON.parse(localStorage.getItem("datos"))
+            }
+        })
+        alert('Se ha eliminado la entrada correctamente!!!');
+    }
+
     handleOrder = (opcion) => {
         switch(opcion){
             case 'graduacion':
@@ -96,11 +120,14 @@ class Listado extends Component {
                     <div className="tablaListado" key={uuid()}>
                         <div className="elementoLista" key={item.id}>
                             <Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}><FontAwesomeIcon icon={faPencilAlt} /></Link>
-                            <Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}><FontAwesomeIcon icon={faEraser} /></Link>
+                            <FontAwesomeIcon icon={faEraser} onClick={() => this.handleDelete(item.id)}/>
                             {/* <FontAwesomeIcon icon={faPencilAlt}/><Link className="botonEditar" to={`/edicion/${item.id}`} state={item.id}>Editar</Link> */}
                             {/* <FontAwesomeIcon icon={faEraser}/><Link className="botonBorrar" to={`/borrado/${item.id}`} state={item.id}>Borrar</Link> */}
-                        {item.id}</div>
-                        <div className="elementoLista" >{item.imagen}</div>
+                        </div>
+                        <div className="elementoLista" >
+                            <img id="imgSelected" src={"/img/" + item.imagen.substring(12)} width="100px" height="100px" name="imgSelected" 
+                            alt="imagen seleccionada mediante cuadro de diálogo"></img>
+                        </div>
                         <div className="elementoLista" >{item.nombre}</div>
                         <div className="elementoLista" >{item.graduacion}</div>
                         <div className="elementoLista" >{seleccionTipo[item.tipo]}</div>

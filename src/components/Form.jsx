@@ -65,7 +65,7 @@ class Form extends Component {
     document.getElementById("imgSelected").style.display = "block";
 
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        let reader = new FileReader();
 
         reader.onload = function (e) {
             document.getElementById('imgSelected').src = e.target.result;
@@ -172,7 +172,7 @@ class Form extends Component {
                         <label htmlFor="imagen">Imagen:</label>
                         <input type="file" className="form-control-file" id="img_in" name="imagen" value={this.state.imagen} 
                         onChange={(event) => this.handleUserInput(event)} required></input>
-                        <img id="imgSelected" src="#" name="imgSelected" alt="imagen seleccionada mediante cuadro de diálogo"></img>
+                        <img id="imgSelected" src={"/img/"+this.state.imagen.substring(12)} width="100px" height="100px" name="imgSelected" alt="imagen seleccionada mediante cuadro de diálogo"></img>
                         <br/>
                     </div>
                     <div className="form-row">
