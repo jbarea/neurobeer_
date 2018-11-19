@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../css/edicion.css';
-
+import { setSelectedIndex } from '../utils/actions';
 class Edicion extends Component {
     constructor(props){
         super(props);
@@ -19,6 +19,7 @@ class Edicion extends Component {
             elem: ele,
             id: data.id,
             imagen: '',
+            img_test: data.imagen,
             grad: data.graduacion,
             nombre: data.nombre,
             tipo: data.tipo,
@@ -188,7 +189,8 @@ class Edicion extends Component {
                         <label htmlFor="imagen">Imagen:</label>
                         <input type="file" className="form-control-file" id="img_in" name="imagen" value={this.state.imagen}
                             onChange={(event) => this.handleUserInput(event)}></input>
-                        <img id="imgSelected" src="#" name="imgSelected" alt="imagen seleccionada mediante cuadro de diálogo"></img>
+                        <img id="imgSelected" src={"/img/" + this.state.img_test.substring(12)} width="100px" height="100px" name="imgSelected"
+                            alt="imagen seleccionada mediante cuadro de diálogo"></img>
                         <br />
                     </div>
                     <div className="form-row">
@@ -216,6 +218,9 @@ class Edicion extends Component {
                             <option value="7">Porter</option>
                             <option value="8">Stout</option>
                         </select><br />
+                        {
+                            //setSelectedIndex(document.getElementById("tipo"), this.state.tipo)
+                        }
                     </div>
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
                         <label htmlFor="ingr">Ingredientes:</label><br />

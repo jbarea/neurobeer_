@@ -6,3 +6,8 @@ export var ordenarPor = function (field, reverse, primer) {
         return ((A < B) ? -1 : ((A > B) ? 1 : 0)) * [-1, 1][+!!reverse];
     }
 }
+
+export var setSelectedIndex = function (s, i){
+    s.options[i-1].selected = true;
+    return 
+} 
