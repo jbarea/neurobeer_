@@ -7,7 +7,3 @@ export var ordenarPor = function (field, reverse, primer) {
     }
 }
 
-export var setSelectedIndex = function (s, i){
-    s.options[i-1].selected = true;
-    return 
-} 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../css/edicion.css';
-import { setSelectedIndex } from '../utils/actions';
+//import { setSelectedIndex } from '../utils/actions';
 class Edicion extends Component {
     constructor(props){
         super(props);
@@ -176,6 +176,10 @@ class Edicion extends Component {
         return (error.length === 0 ? '' : 'has-error');
     }
 
+    selectingIndex() {
+        //document.getElementById("tipo").selectedIndex = parseInt(this.state.tipo);
+    }
+
     render(){
         
         return(
@@ -209,19 +213,21 @@ class Edicion extends Component {
                         <label htmlFor="sele">Selección</label>
                         <select id="tipo" name="tipo" onChange={(event) => this.handleUserInput(event)}>
                             <option value="0">Seleccione Un tipo</option>
-                            <option value="1">Ale</option>
-                            <option value="2">De trigo</option>
-                            <option value="3">IPA</option>
-                            <option value="4">Lager</option>
-                            <option value="5">Lambic</option>
-                            <option value="6" >Pilsen</option>
-                            <option value="7">Porter</option>
-                            <option value="8">Stout</option>
+                            <option value="1" selected={this.state.tipo==="1" ? true : false}>Ale</option>
+                            <option value="2" selected={this.state.tipo==="2" ? true : false}>De trigo</option>
+                            <option value="3" selected={this.state.tipo==="3" ? true : false}>IPA</option>
+                            <option value="4" selected={this.state.tipo==="4" ? true : false}>Lager</option>
+                            <option value="5" selected={this.state.tipo==="5" ? true : false}>Lambic</option>
+                            <option value="6" selected={this.state.tipo==="6" ? true : false}>Pilsen</option>
+                            <option value="7" selected={this.state.tipo==="7" ? true : false}>Porter</option>
+                            <option value="8" selected={this.state.tipo==="8" ? true : false}>Stout</option>
                         </select><br />
-                        {
-                            //setSelectedIndex(document.getElementById("tipo"), this.state.tipo)
-                        }
                     </div>
+                    {
+                        this.selectingIndex()
+                        //document.getElementById("tipo").selectedIndex = parseInt(this.state.tipo)
+                        //setSelectedIndex(document.getElementById("tipo"), this.state.tipo)
+                    }
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
                         <label htmlFor="ingr">Ingredientes:</label><br />
                         <textarea name="ingr" rows="4" cols="80" value={this.state.ingr}
@@ -246,6 +252,7 @@ class Edicion extends Component {
             </form>
         )
     }
+    
 }
 
 export default Edicion;
