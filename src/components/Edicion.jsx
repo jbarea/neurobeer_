@@ -14,7 +14,8 @@ class Edicion extends Component {
         });
         console.log(data);
         console.log(id_);
-        console.log('props from link', this.props.match.params.id)
+        console.log('props from link', this.props.match.params.id);
+        //console.log("valor de data.imagen: "+data.imagen);
         this.state = {
             elem: ele,
             id: data.id,
@@ -176,10 +177,6 @@ class Edicion extends Component {
         return (error.length === 0 ? '' : 'has-error');
     }
 
-    selectingIndex() {
-        //document.getElementById("tipo").selectedIndex = parseInt(this.state.tipo);
-    }
-
     render(){
         
         return(
@@ -223,11 +220,7 @@ class Edicion extends Component {
                             <option value="8" selected={this.state.tipo==="8" ? true : false}>Stout</option>
                         </select><br />
                     </div>
-                    {
-                        this.selectingIndex()
-                        //document.getElementById("tipo").selectedIndex = parseInt(this.state.tipo)
-                        //setSelectedIndex(document.getElementById("tipo"), this.state.tipo)
-                    }
+                   
                     <div className={`form-group ${this.errorClass(this.state.formErrors.ingr)}`} id="ingr">
                         <label htmlFor="ingr">Ingredientes:</label><br />
                         <textarea name="ingr" rows="4" cols="80" value={this.state.ingr}

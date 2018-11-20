@@ -1,0 +1,11 @@
+diff a/src/components/Edicion.jsx b/src/components/Edicion.jsx	(rejected hunks)
+@@ -14,7 +14,8 @@
+         });
+         console.log(data);
+         console.log(id_);
+-        console.log('props from link', this.props.match.params.id)
++        console.log('props from link', this.props.match.params.id);
++        console.log("valor de data.imagen: "+data.imagen);
+         this.state = {
+             elem: ele,
+             id: data.id,
