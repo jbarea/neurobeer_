@@ -61,7 +61,7 @@ class Form extends Component {
         alert("Se ha creado la entrada correctamente!. Pulse aceptar para continuar.");
     }
 
-    readURL(input) {
+/*     readURL(input) {
     document.getElementById("imgSelected").style.display = "block";
 
     if (input.files && input.files[0]) {
@@ -73,7 +73,7 @@ class Form extends Component {
 
         reader.readAsDataURL(input.files[0]);
         }
-    }
+    } */
 
     handleUserInput = (e) => {
         e.preventDefault();

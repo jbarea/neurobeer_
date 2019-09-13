@@ -6,6 +6,7 @@ import icono from './img/icono_cerveza.png';
 import Home from './components/Home.page';
 import Form from './components/Form';
 import Listado from './components/Listado';
+import ListPag from './components/ListPag';
 import Edicion from './components/Edicion';
 import Borrado from './components/Borrado';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -21,6 +22,7 @@ const Header = () => (
         <NavLink className="navlink" activeClassName='is-active' to='/' exact>Inicio</NavLink>
         <NavLink className="navlink" activeClassName='is-active' to='/insertar'>Insertar</NavLink>
         <NavLink className="navlink" activeClassName='is-active' to='/listado'>Listado</NavLink>
+        <NavLink className="navlink" activeClassName='is-active' to='/listadoP'>Listado Pag</NavLink>
     </header>
     </div>
 );
@@ -41,6 +43,7 @@ const AppRouter = () => (
                 <Route path='/' component={Home} exact/>
                 <Route path='/insertar' component={Form} exact/>
                 <Route path='/listado' component={Listado} exact/>
+                <Route path='/listadoP' component={ListPag} exact/>
                 <Route path='/edicion/:id' component={Edicion} exact/>
                 <Route path='/borrado/:id' component={Borrado} exact/>
             </Switch>

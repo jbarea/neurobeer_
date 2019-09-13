@@ -17,6 +17,8 @@ class Listado extends Component {
             porNombre: false,
             datosListado: JSON.parse(localStorage.getItem("datos")) || []
         }
+        console.log(this.state.datosListado);
+        console.log(this.state.datosListado.length);
     }
 
     handleDelete = (elemID) => {

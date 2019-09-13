@@ -73,7 +73,7 @@ class Edicion extends Component {
         alert("Se ha modificado la entrada correctamente!. Pulse aceptar para continuar.");
     }
 
-    readURL(input) {
+/*     readURL(input) {
         document.getElementById("imgSelected").style.display = "block";
 
         if (input.files && input.files[0]) {
@@ -85,7 +85,7 @@ class Edicion extends Component {
 
             reader.readAsDataURL(input.files[0]);
         }
-    }
+    } */
 
     handleUserInput = (e) => {
         e.preventDefault();
